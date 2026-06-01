@@ -156,6 +156,48 @@ footer{background:var(--navy);padding:3rem 5% 1.5rem;}
   .footer-bottom{flex-direction:column;text-align:center;}
   .social-links{justify-content:center;}
 }
+
+@media(max-width:768px){
+  .nav-links{display:none!important;}.hamburger{display:flex!important;}
+  nav{height:64px!important;padding:0 4%!important;}
+  .page-hero{padding:3rem 4% 2rem!important;}
+  h1,h2,.page-title,.sec-title,.batch-title{font-size:1.8rem!important;letter-spacing:-0.01em!important;}
+  section{padding:3rem 4%!important;}
+  /* Hero */
+  .hero{padding:5rem 4% 3rem!important;min-height:auto!important;}
+  .hero-inner{display:flex!important;flex-direction:column!important;gap:1.5rem!important;}
+  .hero-inner>div:last-child{display:none!important;}
+  .hero-actions{flex-direction:column!important;}
+  .hero-actions a{width:100%!important;justify-content:center!important;}
+  .hero-trust{flex-direction:column!important;gap:0.6rem!important;}
+  /* Grids → single column */
+  .services-grid,.provide-grid,.why-grid,.highlights-grid,
+  .steps-grid,.domains-grid,.testi-grid,.offers-grid,
+  .why-grid,.courses-grid,.footer-top,.extra-wrap,
+  .about-company-inner,.contact-wrap,.trainer-inner,
+  .pillars-grid,.values-grid,.course-grid{grid-template-columns:1fr!important;gap:1rem!important;}
+  /* 2-col grids */
+  .stats-inner,.trainer-stats,.batch-topics,.form-grid,
+  .about-highlights,.hero-trust-grid{grid-template-columns:1fr 1fr!important;gap:0.75rem!important;}
+  /* Flex fixes */
+  .batch-inner,.about-inner,.cta-banner{flex-direction:column!important;gap:1.5rem!important;}
+  .batch-actions,.cta-btns,.trainer-links,.hero-actions{flex-direction:column!important;align-items:stretch!important;}
+  .batch-actions a,.cta-btns a,.trainer-links a,.btn-white,.btn-navy,.btn-wa,.btn-outline-white{text-align:center!important;justify-content:center!important;width:100%!important;}
+  /* Footer */
+  .footer-top{grid-template-columns:1fr!important;}
+  .footer-bottom{flex-direction:column!important;text-align:center!important;}
+  .footer-links{justify-content:center!important;flex-wrap:wrap!important;}
+  .social-links{justify-content:center!important;}
+  /* Images */
+  .about-img{height:250px!important;}
+  .trainer-photo{width:120px!important;height:120px!important;}
+  /* Batch price */
+  .batch-price-card{min-width:auto!important;width:100%!important;}
+  /* Testi */
+  .testi-placed{flex-direction:column!important;gap:0.5rem!important;}
+  /* Contact */
+  .contact-wrap{grid-template-columns:1fr!important;}
+}
 </style>
 </head>
 <body>
