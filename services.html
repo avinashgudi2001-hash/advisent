@@ -83,33 +83,29 @@ footer p{color:var(--muted);font-size:0.78rem;}
 <body>
 <script>document.addEventListener('DOMContentLoaded',function(){var el=document.getElementById('nav-services');if(el)el.classList.add('active');});</script>
 <nav>
-  <a href="index.html" class="logo">Ad<span>visent</span></a>
+  <a href="index.html" class="logo-wrap">
+    <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+    <div><div class="logo-text">Ad<span>visent</span></div><div class="logo-sub">Consultancy Services</div></div>
+  </a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html" id="nav-about">About</a></li>
-    <li><a href="services.html" id="nav-services">Services</a></li>
-    <li><a href="training.html" id="nav-training">Training</a></li>
-    <li><a href="contact.html" id="nav-contact">Contact</a></li>
+    <li><a href="index.html" >Home</a></li>
+    <li><a href="about.html" >About Us</a></li>
+    <li><a href="training.html#batch">Upcoming Batch</a></li>
+    <li><a href="training.html" >Trainings</a></li>
+    <li><a href="placements.html" >Placements</a></li>
+    <li><a href="contact.html" >Contact Us</a></li>
     <li><a href="contact.html" class="nav-cta">Free Demo</a></li>
   </ul>
-  <button class="hamburger" onclick="document.getElementById('mob').classList.toggle('open')">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="hamburger" onclick="document.getElementById('mob').classList.toggle('open')"><span></span><span></span><span></span></button>
 </nav>
 <div class="mob-menu" id="mob">
-  <a href="index.html">🏠 Home</a>
-  <a href="about.html">👤 About</a>
-  <a href="services.html">⚙️ Services</a>
-  <a href="training.html">🎓 Training</a>
-  <a href="contact.html">📞 Contact</a>
-  <a href="contact.html">🎯 Free Demo</a>
-</div>
-<div class="page-hero">
-  <div class="page-hero-inner">
-    <div class="breadcrumb"><a href="index.html">Home</a> / <span>Services</span></div>
-    <div class="page-title">Our Services</div>
-    <p class="page-desc">From cloud consulting to career mentorship — real solutions for real problems.</p>
-  </div>
+  <a href="index.html" onclick="document.getElementById('mob').classList.remove('open')">🏠 Home</a>
+  <a href="about.html" onclick="document.getElementById('mob').classList.remove('open')">👤 About Us</a>
+  <a href="training.html#batch" onclick="document.getElementById('mob').classList.remove('open')">🚀 Upcoming Batch</a>
+  <a href="training.html" onclick="document.getElementById('mob').classList.remove('open')">🎓 Trainings</a>
+  <a href="placements.html" onclick="document.getElementById('mob').classList.remove('open')">💼 Placements</a>
+  <a href="contact.html" onclick="document.getElementById('mob').classList.remove('open')">📞 Contact Us</a>
+  <a href="contact.html" onclick="document.getElementById('mob').classList.remove('open')">🎯 Free Demo</a>
 </div>
 
 <section>
