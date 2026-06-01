@@ -175,14 +175,13 @@ footer{background:var(--navy);padding:3rem 5% 1.5rem;}
 
 <!-- CONTACT -->
 <section class="contact-section">
-  <div class="contact-wrap">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;" class="contact-wrap">
 
-    <!-- LEFT INFO -->
-    <div>
+    <!-- CONTACT INFO — left on desktop, order 2 on mobile -->
+    <div style="order:1;" class="contact-info-col">
       <div class="sec-eyebrow">Get In Touch</div>
       <div class="contact-title">Let's talk about<br><span>what you need.</span></div>
       <p class="contact-desc">Whether you're a student looking to upskill, a fresher seeking your first job, or a professional wanting to grow — reach out and we'll guide you to the right program.</p>
-
       <div class="contact-items">
         <a href="tel:+916304208596" class="contact-item">
           <div class="contact-icon">📞</div>
@@ -192,7 +191,7 @@ footer{background:var(--navy);padding:3rem 5% 1.5rem;}
           <div class="contact-icon">✉️</div>
           <div><div class="contact-label">Email Us</div><div class="contact-val">info@advisent.co.in</div></div>
         </a>
-        <a href="https://wa.me/916304208596?text=Hi%20Avinash!%20I%20want%20to%20know%20more%20about%20Advisent." target="_blank" class="contact-item">
+        <a href="https://wa.me/916304208596" target="_blank" class="contact-item">
           <div class="contact-icon">💬</div>
           <div><div class="contact-label">WhatsApp</div><div class="contact-val">Chat with Avinash directly</div></div>
         </a>
@@ -201,69 +200,70 @@ footer{background:var(--navy);padding:3rem 5% 1.5rem;}
           <div><div class="contact-label">LinkedIn</div><div class="contact-val">linkedin.com/in/gudi-avinash</div></div>
         </a>
       </div>
-
-      <div style="background:var(--bg3);border:1px solid rgba(30,111,217,0.15);border-radius:12px;padding:1.25rem;display:flex;align-items:center;gap:0.85rem;">
+      <div style="background:var(--bg3);border:1px solid rgba(30,111,217,.15);border-radius:12px;padding:1.25rem;display:flex;align-items:center;gap:.85rem;margin-top:1rem;">
         <div style="font-size:1.5rem;">⏱️</div>
         <div>
-          <div style="font-size:0.85rem;font-weight:700;color:var(--navy);">Quick Response Guaranteed</div>
-          <div style="font-size:0.78rem;color:var(--muted);margin-top:0.15rem;">We reply within 24 hours — usually much faster on WhatsApp.</div>
+          <div style="font-size:.85rem;font-weight:700;color:var(--navy);">Quick Response Guaranteed</div>
+          <div style="font-size:.78rem;color:var(--muted);margin-top:.15rem;">We reply within 24 hours — usually faster on WhatsApp.</div>
         </div>
       </div>
     </div>
 
-    <!-- RIGHT FORM -->
-    <div class="form-card">
-      <div class="form-title">Book Your Free Demo</div>
-      <div class="form-subtitle">Fill in your details and we'll get back to you shortly.</div>
-      <div class="form-grid">
-        <div class="form-field">
-          <label>First Name</label>
-          <input type="text" placeholder="Rahul" id="fname">
+    <!-- FORM — right on desktop, order 1 on mobile -->
+    <div style="order:2;" class="contact-form-col">
+      <div class="form-card">
+        <div class="form-title">Book Your Free Demo</div>
+        <div class="form-subtitle">Fill in your details and we'll get back to you shortly.</div>
+        <div class="form-grid">
+          <div class="form-field">
+            <label>First Name</label>
+            <input type="text" placeholder="Rahul" id="fname">
+          </div>
+          <div class="form-field">
+            <label>Last Name</label>
+            <input type="text" placeholder="Sharma" id="lname">
+          </div>
+          <div class="form-field full">
+            <label>Email Address</label>
+            <input type="email" placeholder="rahul@email.com" id="email">
+          </div>
+          <div class="form-field full">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="+91 98765 43210" id="phone">
+          </div>
+          <div class="form-field full">
+            <label>Course Interested In</label>
+            <select id="course">
+              <option value="">Select a course...</option>
+              <option>DevOps Engineering</option>
+              <option>Java Full Stack Engineering</option>
+              <option>Data Engineering</option>
+              <option>SAP ABAP</option>
+              <option>Technical Support</option>
+              <option>Cybersecurity & DevSecOps</option>
+              <option>Frontend Development</option>
+              <option>VLSI Design</option>
+              <option>1:1 Mentorship</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="form-field full">
+            <label>Experience Level</label>
+            <select id="level">
+              <option value="">Select level...</option>
+              <option>Complete Beginner</option>
+              <option>Some Knowledge</option>
+              <option>Intermediate</option>
+              <option>Professional Upskilling</option>
+            </select>
+          </div>
+          <div class="form-field full">
+            <label>Message (Optional)</label>
+            <textarea placeholder="Tell us your goal..." id="message"></textarea>
+          </div>
+          <button class="form-submit" onclick="submitForm()">🚀 Send Inquiry</button>
+          <div class="success-msg" id="success">✅ Thank you! We'll get back to you within 24 hours.</div>
         </div>
-        <div class="form-field">
-          <label>Last Name</label>
-          <input type="text" placeholder="Sharma" id="lname">
-        </div>
-        <div class="form-field full">
-          <label>Email Address</label>
-          <input type="email" placeholder="rahul@email.com" id="email">
-        </div>
-        <div class="form-field full">
-          <label>Phone Number</label>
-          <input type="tel" placeholder="+91 98765 43210" id="phone">
-        </div>
-        <div class="form-field full">
-          <label>Course Interested In</label>
-          <select id="course">
-            <option value="">Select a course...</option>
-            <option>DevOps Engineering</option>
-            <option>Java Full Stack Engineering</option>
-            <option>Data Engineering</option>
-            <option>SAP ABAP</option>
-            <option>Technical Support</option>
-            <option>Cybersecurity & DevSecOps</option>
-            <option>Frontend Development</option>
-            <option>VLSI Design</option>
-            <option>1:1 Mentorship</option>
-            <option>Something else</option>
-          </select>
-        </div>
-        <div class="form-field full">
-          <label>Experience Level</label>
-          <select id="level">
-            <option value="">Select level...</option>
-            <option>Complete Beginner</option>
-            <option>Some Knowledge</option>
-            <option>Intermediate</option>
-            <option>Professional Upskilling</option>
-          </select>
-        </div>
-        <div class="form-field full">
-          <label>Message (Optional)</label>
-          <textarea placeholder="Tell us your goal or what you're working on..." id="message"></textarea>
-        </div>
-        <button class="form-submit" onclick="submitForm()">🚀 Send Inquiry</button>
-        <div class="success-msg" id="success">✅ Thank you! We'll get back to you within 24 hours.</div>
       </div>
     </div>
 
