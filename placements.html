@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Placements — Advisent Consultancy Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f2d5e;--navy2:#1a3d7c;--blue:#1e6fd9;--accent:#f97316;--green:#22c55e;--bg:#ffffff;--bg2:#f4f7fb;--bg3:#eaf0fb;--text:#0f172a;--muted:#64748b;--border:#e2e8f0;--shadow:0 2px 16px rgba(15,45,94,0.08);--shadow2:0 4px 32px rgba(15,45,94,0.12);}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;line-height:1.6;}
+nav{background:#fff;border-bottom:1px solid var(--border);padding:0 5%;height:72px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:var(--shadow);}
+.logo-wrap{display:flex;align-items:center;gap:0.75rem;text-decoration:none;}
+.logo-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:10px;display:flex;align-items:center;justify-content:center;}
+.logo-icon svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.logo-text{font-size:1.1rem;font-weight:800;color:var(--navy);letter-spacing:-0.01em;line-height:1.1;}
+.logo-text span{color:var(--blue);}
+.logo-sub{font-size:0.6rem;color:var(--muted);font-weight:500;letter-spacing:0.08em;text-transform:uppercase;}
+.nav-links{display:flex;gap:0.25rem;list-style:none;align-items:center;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.875rem;font-weight:500;padding:0.5rem 0.85rem;border-radius:6px;transition:all 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--navy);background:var(--bg3);}
+.nav-cta{background:var(--navy)!important;color:#fff!important;padding:0.5rem 1.25rem!important;border-radius:6px;font-weight:600!important;}
+.nav-cta:hover{background:var(--blue)!important;color:#fff!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px;display:block;}
+.mob-menu{display:none;position:fixed;inset:0;top:72px;background:#fff;z-index:99;padding:1.5rem 5%;flex-direction:column;border-top:1px solid var(--border);}
+.mob-menu.open{display:flex;}
+.mob-menu a{color:var(--text);text-decoration:none;font-size:1rem;font-weight:500;padding:0.85rem 0;border-bottom:1px solid var(--border);}
+
+/* PAGE HERO */
+.page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);padding:4rem 5% 3rem;}
+.page-hero-inner{max-width:1100px;margin:0 auto;}
+.breadcrumb{font-size:0.78rem;color:rgba(255,255,255,0.5);margin-bottom:1rem;}
+.breadcrumb a{color:rgba(255,255,255,0.5);text-decoration:none;}
+.breadcrumb span{color:rgba(255,255,255,0.8);}
+.page-title{font-size:clamp(2rem,4vw,3rem);font-weight:800;color:#fff;margin-bottom:0.75rem;letter-spacing:-0.02em;}
+.page-desc{color:rgba(255,255,255,0.65);font-size:1rem;max-width:560px;font-weight:300;line-height:1.7;}
+
+/* STATS */
+.stats-strip{background:var(--bg2);border-bottom:1px solid var(--border);padding:2.5rem 5%;}
+.stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:14px;overflow:hidden;}
+.stat-box{background:#fff;padding:1.75rem;text-align:center;}
+.stat-val{font-size:2rem;font-weight:800;color:var(--navy);letter-spacing:-0.02em;}
+.stat-val span{color:var(--blue);}
+.stat-lbl{font-size:0.78rem;color:var(--muted);margin-top:0.25rem;font-weight:500;}
+
+/* SECTION */
+section{padding:4rem 5%;}
+.sec-wrap{max-width:1100px;margin:0 auto;}
+.sec-eyebrow{display:inline-flex;align-items:center;gap:0.4rem;background:var(--bg3);color:var(--blue);font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 0.85rem;border-radius:100px;border:1px solid rgba(30,111,217,0.15);margin-bottom:1rem;}
+.sec-title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:var(--navy);letter-spacing:-0.02em;margin-bottom:0.75rem;}
+.sec-title span{color:var(--blue);}
+.sec-desc{color:var(--muted);font-size:0.95rem;line-height:1.75;max-width:560px;margin-bottom:2.5rem;}
+
+/* HOW IT WORKS */
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem;margin-top:2rem;}
+.step-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.75rem;text-align:center;position:relative;transition:transform 0.25s,box-shadow 0.25s;}
+.step-card:hover{transform:translateY(-4px);box-shadow:var(--shadow2);}
+.step-num{width:44px;height:44px;background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:800;color:#fff;margin:0 auto 1rem;}
+.step-icon{font-size:1.75rem;margin-bottom:0.75rem;}
+.step-name{font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;}
+.step-desc{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+.step-connector{position:absolute;top:50%;right:-14px;width:28px;height:2px;background:var(--border);z-index:1;}
+
+/* WHAT WE PROVIDE */
+.provide-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;}
+.provide-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.75rem;transition:transform 0.25s,box-shadow 0.25s,border-color 0.25s;position:relative;overflow:hidden;}
+.provide-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--navy),var(--blue));opacity:0;transition:opacity 0.25s;}
+.provide-card:hover{transform:translateY(-4px);box-shadow:var(--shadow2);border-color:rgba(30,111,217,0.2);}
+.provide-card:hover::before{opacity:1;}
+.provide-icon{width:48px;height:48px;background:var(--bg3);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.1rem;border:1px solid rgba(30,111,217,0.1);}
+.provide-name{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;}
+.provide-desc{font-size:0.85rem;color:var(--muted);line-height:1.65;}
+
+/* DOMAINS */
+.domains-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;}
+.domain-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:0.85rem;transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s;}
+.domain-card:hover{transform:translateY(-3px);border-color:rgba(30,111,217,0.25);box-shadow:var(--shadow);}
+.domain-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.domain-name{font-size:0.9rem;font-weight:600;color:var(--navy);}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;}
+.testi-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:1.75rem;transition:transform 0.25s,box-shadow 0.25s;}
+.testi-card:hover{transform:translateY(-4px);box-shadow:var(--shadow2);}
+.testi-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;}
+.testi-avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-weight:800;font-size:1rem;color:#fff;flex-shrink:0;}
+.testi-info{margin-left:0.75rem;flex:1;}
+.testi-name{font-weight:700;font-size:0.92rem;color:var(--navy);}
+.testi-course{font-size:0.75rem;color:var(--muted);}
+.testi-stars{color:#f59e0b;font-size:0.85rem;}
+.testi-text{color:var(--muted);font-size:0.88rem;line-height:1.7;font-style:italic;margin-bottom:1.25rem;}
+.testi-placed{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;display:flex;justify-content:space-between;align-items:center;gap:0.5rem;flex-wrap:wrap;}
+.placed-label{font-size:0.7rem;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.15rem;}
+.placed-company{font-size:0.88rem;font-weight:700;color:var(--navy);}
+.placed-role{font-size:0.75rem;color:var(--muted);}
+
+/* CTA */
+.cta-section{background:linear-gradient(135deg,var(--navy),var(--navy2));padding:4rem 5%;text-align:center;}
+.cta-inner{max-width:620px;margin:0 auto;}
+.btn-white{background:#fff;color:var(--navy);padding:0.9rem 2rem;border-radius:8px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.2s;display:inline-flex;align-items:center;gap:0.5rem;}
+.btn-white:hover{background:#f1f5f9;transform:translateY(-2px);}
+.btn-wa{background:#25D366;color:#fff;padding:0.9rem 2rem;border-radius:8px;font-weight:600;font-size:0.95rem;text-decoration:none;transition:all 0.2s;display:inline-flex;align-items:center;gap:0.5rem;}
+.btn-wa:hover{background:#1da851;transform:translateY(-2px);}
+
+/* FOOTER */
+footer{background:var(--navy);padding:3rem 5% 1.5rem;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
+.footer-logo-wrap{display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;}
+.footer-logo-icon{width:36px;height:36px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;}
+.footer-logo-icon svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.footer-logo-name{font-size:1rem;font-weight:800;color:#fff;}
+.footer-logo-name span{color:#3b82f6;}
+.footer-tagline{color:rgba(255,255,255,0.55);font-size:0.85rem;line-height:1.65;max-width:280px;}
+.footer-heading{font-size:0.78rem;font-weight:700;color:#fff;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1rem;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+.footer-links a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.85rem;transition:color 0.2s;}
+.footer-links a:hover{color:#fff;}
+.footer-contacts{display:flex;flex-direction:column;gap:0.6rem;}
+.footer-contact{display:flex;align-items:center;gap:0.5rem;color:rgba(255,255,255,0.55);font-size:0.82rem;text-decoration:none;}
+.footer-contact:hover{color:#fff;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-bottom p{color:rgba(255,255,255,0.4);font-size:0.78rem;}
+.social-links{display:flex;gap:0.5rem;}
+.social-link{width:32px;height:32px;background:rgba(255,255,255,0.08);border-radius:6px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.75rem;font-weight:700;transition:all 0.2s;}
+.social-link:hover{background:var(--blue);color:#fff;}
+.wa-btn{position:fixed;bottom:2rem;right:2rem;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:500;box-shadow:0 4px 20px rgba(37,211,102,0.4);text-decoration:none;transition:transform 0.2s;}
+.wa-btn:hover{transform:scale(1.1);}
+.wa-btn svg{width:26px;height:26px;fill:#fff;}
+
+@media(max-width:900px){
+  .nav-links{display:none;}.hamburger{display:flex;}
+  .stats-inner{grid-template-columns:repeat(2,1fr);}
+  .footer-top{grid-template-columns:1fr;}
+  .footer-bottom{flex-direction:column;text-align:center;}
+  .social-links{justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo-wrap">
+    <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+    <div><div class="logo-text">Ad<span>visent</span></div><div class="logo-sub">Consultancy Services</div></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="training.html#batch">Upcoming Batch</a></li>
+    <li><a href="training.html">Trainings</a></li>
+    <li><a href="placements.html" class="active">Placements</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="contact.html" class="nav-cta">Free Demo</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('mob').classList.toggle('open')"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-menu" id="mob">
+  <a href="index.html">🏠 Home</a>
+  <a href="about.html">👤 About Us</a>
+  <a href="training.html#batch">🚀 Upcoming Batch</a>
+  <a href="training.html">🎓 Trainings</a>
+  <a href="placements.html">💼 Placements</a>
+  <a href="contact.html">📞 Contact Us</a>
+  <a href="contact.html">🎯 Free Demo</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <span>Placements</span></div>
+    <div class="page-title">Placement Support</div>
+    <p class="page-desc">We don't just train you — we stand with you until you land the right job. Our end-to-end placement support is designed to make you interview-ready and employer-preferred.</p>
+  </div>
+</div>
+
+<!-- HIGHLIGHTS - KCS IT STYLE -->
+<section style="background:var(--bg2);border-bottom:1px solid var(--border);padding:4rem 5%;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <div style="display:inline-flex;align-items:center;gap:0.4rem;background:var(--bg3);color:var(--blue);font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 0.85rem;border-radius:100px;border:1px solid rgba(30,111,217,0.15);margin-bottom:1rem;">Our Achievements</div>
+      <div style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:var(--navy);letter-spacing:-0.02em;">Placement <span style="color:var(--blue);">Highlights</span></div>
+      <p style="color:var(--muted);font-size:0.95rem;margin-top:0.75rem;max-width:520px;margin-left:auto;margin-right:auto;">Our strong industry network and hands-on training approach have helped candidates secure rewarding careers in top organisations.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;">
+
+      <div style="background:#fff;border:1px solid var(--border);border-radius:16px;padding:2rem;text-align:center;transition:transform 0.25s,box-shadow 0.25s;position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 4px 32px rgba(15,45,94,0.12)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--navy),var(--blue));"></div>
+        <div style="font-size:2.5rem;font-weight:800;color:var(--navy);letter-spacing:-0.02em;">4<span style="color:var(--blue);">+</span></div>
+        <div style="font-size:1rem;font-weight:700;color:var(--navy);margin:0.5rem 0 0.4rem;">Students Placed</div>
+        <div style="font-size:0.83rem;color:var(--muted);line-height:1.6;">Successfully placed in IT companies and startups through structured training and dedicated interview preparation.</div>
+      </div>
+
+      <div style="background:#fff;border:1px solid var(--border);border-radius:16px;padding:2rem;text-align:center;transition:transform 0.25s,box-shadow 0.25s;position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 4px 32px rgba(15,45,94,0.12)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--navy),var(--blue));"></div>
+        <div style="font-size:2.5rem;font-weight:800;color:var(--navy);letter-spacing:-0.02em;">3<span style="color:var(--blue);">+</span></div>
+        <div style="font-size:1rem;font-weight:700;color:var(--navy);margin:0.5rem 0 0.4rem;">Years of Experience</div>
+        <div style="font-size:0.83rem;color:var(--muted);line-height:1.6;">Delivering job-oriented technical training aligned with current market trends and real production standards.</div>
+      </div>
+
+      <div style="background:#fff;border:1px solid var(--border);border-radius:16px;padding:2rem;text-align:center;transition:transform 0.25s,box-shadow 0.25s;position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 4px 32px rgba(15,45,94,0.12)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--navy),var(--blue));"></div>
+        <div style="font-size:2.5rem;font-weight:800;color:var(--navy);letter-spacing:-0.02em;font-size:1.6rem;">DevOps</div>
+        <div style="font-size:1rem;font-weight:700;color:var(--navy);margin:0.5rem 0 0.4rem;">Top Placed Domain</div>
+        <div style="font-size:0.83rem;color:var(--muted);line-height:1.6;">Strong placement demand in DevOps, Cloud Engineering, Kubernetes and CI/CD — the most sought-after skills in the market.</div>
+      </div>
+
+      <div style="background:#fff;border:1px solid var(--border);border-radius:16px;padding:2rem;text-align:center;transition:transform 0.25s,box-shadow 0.25s;position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 4px 32px rgba(15,45,94,0.12)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--navy),var(--blue));"></div>
+        <div style="font-size:2.5rem;font-weight:800;color:var(--navy);letter-spacing:-0.02em;">100<span style="color:var(--blue);">%</span></div>
+        <div style="font-size:1rem;font-weight:700;color:var(--navy);margin:0.5rem 0 0.4rem;">Placement Commitment</div>
+        <div style="font-size:0.83rem;color:var(--muted);line-height:1.6;">We stay with you until you land the right job — resume, interview prep, referrals and everything in between.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div style="display:inline-flex;align-items:center;gap:0.4rem;background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.85);font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 0.85rem;border-radius:100px;margin-bottom:1rem;">Get Placed</div>
+    <div style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:#fff;margin-bottom:0.75rem;letter-spacing:-0.02em;">Your success is<br>our commitment.</div>
+    <p style="color:rgba(255,255,255,0.65);margin-bottom:2rem;font-size:0.95rem;font-weight:300;">Join Advisent today and take the first step toward the career you deserve. We're with you every step of the way.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="contact.html" class="btn-white">📋 Book Free Demo</a>
+      <a href="https://wa.me/916304208596?text=Hi%20Avinash!%20I%20want%20to%20know%20more%20about%20placement%20support." target="_blank" class="btn-wa">💬 WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo-wrap">
+        <div class="footer-logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <div class="footer-logo-name">Ad<span>visent</span></div>
+      </div>
+      <p class="footer-tagline">Empowering careers through industry-focused training and dedicated placement support.</p>
+    </div>
+    <div>
+      <div class="footer-heading">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="training.html">Trainings</a></li>
+        <li><a href="placements.html">Placements</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Contact Us</div>
+      <div class="footer-contacts">
+        <a href="tel:+916304208596" class="footer-contact">📞 +91 63042 08596</a>
+        <a href="mailto:info@advisent.co.in" class="footer-contact">✉️ info@advisent.co.in</a>
+        <a href="https://www.linkedin.com/in/gudi-avinash-4190a0386/" target="_blank" class="footer-contact">💼 LinkedIn</a>
+        <a href="https://wa.me/916304208596" target="_blank" class="footer-contact">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Advisent Consultancy Services. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/gudi-avinash-4190a0386/" target="_blank" class="social-link">in</a>
+      <a href="https://wa.me/916304208596" target="_blank" class="social-link">💬</a>
+      <a href="mailto:info@advisent.co.in" class="social-link">✉</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/916304208596" class="wa-btn" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>

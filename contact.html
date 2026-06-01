@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Advisent Consultancy Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f2d5e;--navy2:#1a3d7c;--blue:#1e6fd9;--accent:#f97316;--bg:#ffffff;--bg2:#f4f7fb;--bg3:#eaf0fb;--text:#0f172a;--muted:#64748b;--border:#e2e8f0;--shadow:0 2px 16px rgba(15,45,94,0.08);--shadow2:0 4px 32px rgba(15,45,94,0.12);}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;line-height:1.6;}
+
+/* NAV */
+nav{background:#fff;border-bottom:1px solid var(--border);padding:0 5%;height:72px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:var(--shadow);}
+.logo-wrap{display:flex;align-items:center;gap:0.75rem;text-decoration:none;}
+.logo-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:10px;display:flex;align-items:center;justify-content:center;}
+.logo-icon svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.logo-text{font-size:1.1rem;font-weight:800;color:var(--navy);letter-spacing:-0.01em;line-height:1.1;}
+.logo-text span{color:var(--blue);}
+.logo-sub{font-size:0.6rem;color:var(--muted);font-weight:500;letter-spacing:0.08em;text-transform:uppercase;}
+.nav-links{display:flex;gap:0.25rem;list-style:none;align-items:center;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.875rem;font-weight:500;padding:0.5rem 0.85rem;border-radius:6px;transition:all 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--navy);background:var(--bg3);}
+.nav-cta{background:var(--navy)!important;color:#fff!important;padding:0.5rem 1.25rem!important;border-radius:6px;font-weight:600!important;}
+.nav-cta:hover{background:var(--blue)!important;color:#fff!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px;display:block;}
+.mob-menu{display:none;position:fixed;inset:0;top:72px;background:#fff;z-index:99;padding:1.5rem 5%;flex-direction:column;border-top:1px solid var(--border);}
+.mob-menu.open{display:flex;}
+.mob-menu a{color:var(--text);text-decoration:none;font-size:1rem;font-weight:500;padding:0.85rem 0;border-bottom:1px solid var(--border);}
+
+/* PAGE HERO */
+.page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);padding:4rem 5% 3rem;}
+.page-hero-inner{max-width:1100px;margin:0 auto;}
+.breadcrumb{font-size:0.78rem;color:rgba(255,255,255,0.5);margin-bottom:1rem;}
+.breadcrumb a{color:rgba(255,255,255,0.5);text-decoration:none;}
+.breadcrumb span{color:rgba(255,255,255,0.8);}
+
+/* CONTACT SECTION */
+.contact-section{padding:5rem 5%;background:var(--bg);}
+.contact-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+
+/* INFO SIDE */
+.sec-eyebrow{display:inline-flex;align-items:center;gap:0.4rem;background:var(--bg3);color:var(--blue);font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 0.85rem;border-radius:100px;border:1px solid rgba(30,111,217,0.15);margin-bottom:1rem;}
+.contact-title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:var(--navy);letter-spacing:-0.02em;margin-bottom:0.75rem;}
+.contact-title span{color:var(--blue);}
+.contact-desc{color:var(--muted);font-size:0.95rem;line-height:1.75;margin-bottom:2rem;}
+.contact-items{display:flex;flex-direction:column;gap:0.85rem;margin-bottom:2rem;}
+.contact-item{display:flex;align-items:center;gap:0.85rem;padding:1rem 1.25rem;background:var(--bg2);border:1.5px solid var(--border);border-radius:12px;text-decoration:none;color:var(--text);transition:border-color 0.2s,box-shadow 0.2s;}
+.contact-item:hover{border-color:rgba(30,111,217,0.3);box-shadow:var(--shadow);}
+.contact-icon{width:40px;height:40px;background:var(--bg3);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;border:1px solid rgba(30,111,217,0.1);}
+.contact-label{font-size:0.7rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.15rem;}
+.contact-val{font-size:0.92rem;font-weight:600;color:var(--navy);}
+
+/* FORM SIDE */
+.form-card{background:var(--bg2);border:1.5px solid var(--border);border-radius:20px;padding:2.5rem;}
+.form-title{font-size:1.3rem;font-weight:800;color:var(--navy);margin-bottom:0.4rem;}
+.form-subtitle{font-size:0.85rem;color:var(--muted);margin-bottom:2rem;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.85rem;}
+.form-field{display:flex;flex-direction:column;gap:0.35rem;}
+.form-field.full{grid-column:1/-1;}
+label{font-size:0.75rem;font-weight:600;color:var(--navy);letter-spacing:0.04em;text-transform:uppercase;}
+input,select,textarea{background:#fff;border:1.5px solid var(--border);border-radius:8px;color:var(--text);font-family:'Inter',sans-serif;font-size:0.88rem;padding:0.75rem 0.9rem;transition:border-color 0.2s,box-shadow 0.2s;outline:none;width:100%;}
+input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(30,111,217,0.08);}
+textarea{resize:vertical;min-height:110px;}
+select option{background:#fff;}
+::placeholder{color:#cbd5e1;}
+.form-submit{background:var(--navy);color:#fff;border:none;padding:0.9rem;border-radius:8px;font-weight:700;font-size:0.95rem;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s;width:100%;margin-top:0.5rem;grid-column:1/-1;}
+.form-submit:hover{background:var(--blue);transform:translateY(-1px);}
+.success-msg{display:none;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:8px;padding:1rem;text-align:center;color:#166534;font-size:0.88rem;font-weight:600;grid-column:1/-1;margin-top:0.5rem;}
+
+/* MAP / EXTRA INFO */
+.extra-section{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 5%;}
+.extra-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.extra-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.75rem;text-align:center;transition:transform 0.25s,box-shadow 0.25s;}
+.extra-card:hover{transform:translateY(-4px);box-shadow:var(--shadow2);}
+.extra-icon{font-size:2rem;margin-bottom:0.85rem;}
+.extra-title{font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;}
+.extra-desc{font-size:0.83rem;color:var(--muted);line-height:1.6;}
+.extra-link{display:inline-flex;align-items:center;gap:0.3rem;color:var(--blue);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:0.75rem;transition:gap 0.2s;}
+.extra-link:hover{gap:0.6rem;}
+
+/* FOOTER */
+footer{background:var(--navy);padding:3rem 5% 1.5rem;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
+.footer-logo-wrap{display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;}
+.footer-logo-icon{width:36px;height:36px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;}
+.footer-logo-icon svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.footer-logo-name{font-size:1rem;font-weight:800;color:#fff;}
+.footer-logo-name span{color:#3b82f6;}
+.footer-tagline{color:rgba(255,255,255,0.55);font-size:0.85rem;line-height:1.65;max-width:280px;}
+.footer-heading{font-size:0.78rem;font-weight:700;color:#fff;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1rem;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+.footer-links a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.85rem;transition:color 0.2s;}
+.footer-links a:hover{color:#fff;}
+.footer-contacts{display:flex;flex-direction:column;gap:0.6rem;}
+.footer-contact{display:flex;align-items:center;gap:0.5rem;color:rgba(255,255,255,0.55);font-size:0.82rem;text-decoration:none;}
+.footer-contact:hover{color:#fff;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-bottom p{color:rgba(255,255,255,0.4);font-size:0.78rem;}
+.social-links{display:flex;gap:0.5rem;}
+.social-link{width:32px;height:32px;background:rgba(255,255,255,0.08);border-radius:6px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.75rem;font-weight:700;transition:all 0.2s;}
+.social-link:hover{background:var(--blue);color:#fff;}
+.wa-btn{position:fixed;bottom:2rem;right:2rem;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:500;box-shadow:0 4px 20px rgba(37,211,102,0.4);text-decoration:none;transition:transform 0.2s;animation:waBounce 2.5s ease infinite;}
+.wa-btn:hover{transform:scale(1.1);animation:none;}
+.wa-btn svg{width:26px;height:26px;fill:#fff;}
+@keyframes waBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+
+@media(max-width:900px){
+  .nav-links{display:none;}.hamburger{display:flex;}
+  .contact-wrap{grid-template-columns:1fr;}
+  .extra-wrap{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr;}
+  .footer-bottom{flex-direction:column;text-align:center;}
+  .social-links{justify-content:center;}
+  .form-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo-wrap">
+    <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+    <div><div class="logo-text">Ad<span>visent</span></div><div class="logo-sub">Consultancy Services</div></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="training.html#batch">Upcoming Batch</a></li>
+    <li><a href="training.html">Trainings</a></li>
+    <li><a href="placements.html">Placements</a></li>
+    <li><a href="contact.html" class="active">Contact Us</a></li>
+    <li><a href="contact.html" class="nav-cta">Free Demo</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('mob').classList.toggle('open')"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-menu" id="mob">
+  <a href="index.html">🏠 Home</a>
+  <a href="about.html">👤 About Us</a>
+  <a href="training.html#batch">🚀 Upcoming Batch</a>
+  <a href="training.html">🎓 Trainings</a>
+  <a href="placements.html">💼 Placements</a>
+  <a href="contact.html">📞 Contact Us</a>
+  <a href="contact.html">🎯 Free Demo</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <span>Contact Us</span></div>
+    <div style="font-size:clamp(2rem,4vw,3rem);font-weight:800;color:#fff;margin-bottom:0.75rem;letter-spacing:-0.02em;">Contact Us</div>
+    <p style="color:rgba(255,255,255,0.65);font-size:1rem;max-width:520px;font-weight:300;line-height:1.7;">We'd love to hear from you. Fill in the form or reach out directly — we respond within 24 hours.</p>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-section">
+  <div class="contact-wrap">
+
+    <!-- LEFT INFO -->
+    <div>
+      <div class="sec-eyebrow">Get In Touch</div>
+      <div class="contact-title">Let's talk about<br><span>what you need.</span></div>
+      <p class="contact-desc">Whether you're a student looking to upskill, a fresher seeking your first job, or a professional wanting to grow — reach out and we'll guide you to the right program.</p>
+
+      <div class="contact-items">
+        <a href="tel:+916304208596" class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div><div class="contact-label">Call Us</div><div class="contact-val">+91 63042 08596</div></div>
+        </a>
+        <a href="mailto:info@advisent.co.in" class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div><div class="contact-label">Email Us</div><div class="contact-val">info@advisent.co.in</div></div>
+        </a>
+        <a href="https://wa.me/916304208596?text=Hi%20Avinash!%20I%20want%20to%20know%20more%20about%20Advisent." target="_blank" class="contact-item">
+          <div class="contact-icon">💬</div>
+          <div><div class="contact-label">WhatsApp</div><div class="contact-val">Chat with Avinash directly</div></div>
+        </a>
+        <a href="https://www.linkedin.com/in/gudi-avinash-4190a0386/" target="_blank" class="contact-item">
+          <div class="contact-icon">💼</div>
+          <div><div class="contact-label">LinkedIn</div><div class="contact-val">linkedin.com/in/gudi-avinash</div></div>
+        </a>
+      </div>
+
+      <div style="background:var(--bg3);border:1px solid rgba(30,111,217,0.15);border-radius:12px;padding:1.25rem;display:flex;align-items:center;gap:0.85rem;">
+        <div style="font-size:1.5rem;">⏱️</div>
+        <div>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--navy);">Quick Response Guaranteed</div>
+          <div style="font-size:0.78rem;color:var(--muted);margin-top:0.15rem;">We reply within 24 hours — usually much faster on WhatsApp.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="form-card">
+      <div class="form-title">Book Your Free Demo</div>
+      <div class="form-subtitle">Fill in your details and we'll get back to you shortly.</div>
+      <div class="form-grid">
+        <div class="form-field">
+          <label>First Name</label>
+          <input type="text" placeholder="Rahul" id="fname">
+        </div>
+        <div class="form-field">
+          <label>Last Name</label>
+          <input type="text" placeholder="Sharma" id="lname">
+        </div>
+        <div class="form-field full">
+          <label>Email Address</label>
+          <input type="email" placeholder="rahul@email.com" id="email">
+        </div>
+        <div class="form-field full">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+91 98765 43210" id="phone">
+        </div>
+        <div class="form-field full">
+          <label>Course Interested In</label>
+          <select id="course">
+            <option value="">Select a course...</option>
+            <option>DevOps Engineering</option>
+            <option>Java Full Stack Engineering</option>
+            <option>Data Engineering</option>
+            <option>SAP ABAP</option>
+            <option>Technical Support</option>
+            <option>Cybersecurity & DevSecOps</option>
+            <option>Frontend Development</option>
+            <option>VLSI Design</option>
+            <option>1:1 Mentorship</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="form-field full">
+          <label>Experience Level</label>
+          <select id="level">
+            <option value="">Select level...</option>
+            <option>Complete Beginner</option>
+            <option>Some Knowledge</option>
+            <option>Intermediate</option>
+            <option>Professional Upskilling</option>
+          </select>
+        </div>
+        <div class="form-field full">
+          <label>Message (Optional)</label>
+          <textarea placeholder="Tell us your goal or what you're working on..." id="message"></textarea>
+        </div>
+        <button class="form-submit" onclick="submitForm()">🚀 Send Inquiry</button>
+        <div class="success-msg" id="success">✅ Thank you! We'll get back to you within 24 hours.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXTRA INFO CARDS -->
+<section class="extra-section">
+  <div class="extra-wrap">
+    <div class="extra-card">
+      <div class="extra-icon">🎓</div>
+      <div class="extra-title">Book Free Demo</div>
+      <div class="extra-desc">Not sure which course is right for you? Book a free 30-min session and we'll help you decide.</div>
+      <a href="training.html" class="extra-link">View Courses →</a>
+    </div>
+    <div class="extra-card">
+      <div class="extra-icon">🚀</div>
+      <div class="extra-title">Upcoming Batch</div>
+      <div class="extra-desc">DevOps & Cloud Engineering batch is open for registration. Limited seats available.</div>
+      <a href="training.html#batch" class="extra-link">Register Now →</a>
+    </div>
+    <div class="extra-card">
+      <div class="extra-icon">💼</div>
+      <div class="extra-title">Placement Support</div>
+      <div class="extra-desc">Learn how we support you from training to your first job offer — end to end.</div>
+      <a href="placements.html" class="extra-link">Know More →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo-wrap">
+        <div class="footer-logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <div class="footer-logo-name">Ad<span>visent</span></div>
+      </div>
+      <p class="footer-tagline">Empowering careers through industry-focused training and dedicated placement support.</p>
+    </div>
+    <div>
+      <div class="footer-heading">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="training.html">Trainings</a></li>
+        <li><a href="placements.html">Placements</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Contact Us</div>
+      <div class="footer-contacts">
+        <a href="tel:+916304208596" class="footer-contact">📞 +91 63042 08596</a>
+        <a href="mailto:info@advisent.co.in" class="footer-contact">✉️ info@advisent.co.in</a>
+        <a href="https://www.linkedin.com/in/gudi-avinash-4190a0386/" target="_blank" class="footer-contact">💼 LinkedIn</a>
+        <a href="https://wa.me/916304208596" target="_blank" class="footer-contact">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Advisent Consultancy Services. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/gudi-avinash-4190a0386/" target="_blank" class="social-link">in</a>
+      <a href="https://wa.me/916304208596" target="_blank" class="social-link">💬</a>
+      <a href="mailto:info@advisent.co.in" class="social-link">✉</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/916304208596?text=Hi%20Avinash!%20I%20want%20to%20know%20more%20about%20Advisent." class="wa-btn" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+function submitForm(){
+  var f=document.getElementById('fname').value;
+  var e=document.getElementById('email').value;
+  if(!f||!e){alert('Please fill in your name and email.');return;}
+  document.getElementById('success').style.display='block';
+  document.getElementById('fname').value='';
+  document.getElementById('lname').value='';
+  document.getElementById('email').value='';
+  document.getElementById('phone').value='';
+  document.getElementById('message').value='';
+  document.getElementById('course').value='';
+  document.getElementById('level').value='';
+}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+  });
+});
+</script>
+</body>
+</html>
