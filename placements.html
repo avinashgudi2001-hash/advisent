@@ -129,54 +129,31 @@ footer{background:var(--navy);padding:3rem 5% 1.5rem;}
 .wa-btn:hover{transform:scale(1.1);}
 .wa-btn svg{width:26px;height:26px;fill:#fff;}
 
-@media(max-width:900px){
-  .nav-links{display:none;}.hamburger{display:flex;}
-  .stats-inner{grid-template-columns:repeat(2,1fr);}
-  .footer-top{grid-template-columns:1fr;}
-  .footer-bottom{flex-direction:column;text-align:center;}
-  .social-links{justify-content:center;}
-}
 
-@media(max-width:768px){
+
+
+
+@media(max-width:800px){
   .nav-links{display:none!important;}.hamburger{display:flex!important;}
-  nav{height:64px!important;padding:0 4%!important;}
-  .page-hero{padding:3rem 4% 2rem!important;}
-  h1,h2,.page-title,.sec-title,.batch-title{font-size:1.8rem!important;letter-spacing:-0.01em!important;}
-  section{padding:3rem 4%!important;}
-  /* Hero */
-  .hero{padding:5rem 4% 3rem!important;min-height:auto!important;}
-  .hero-inner{display:flex!important;flex-direction:column!important;gap:1.5rem!important;}
-  .hero-inner>div:last-child{display:none!important;}
-  .hero-actions{flex-direction:column!important;}
-  .hero-actions a{width:100%!important;justify-content:center!important;}
-  .hero-trust{flex-direction:column!important;gap:0.6rem!important;}
-  /* Grids → single column */
-  .services-grid,.provide-grid,.why-grid,.highlights-grid,
-  .steps-grid,.domains-grid,.testi-grid,.offers-grid,
-  .why-grid,.courses-grid,.footer-top,.extra-wrap,
-  .about-company-inner,.contact-wrap,.trainer-inner,
-  .pillars-grid,.values-grid,.course-grid{grid-template-columns:1fr!important;gap:1rem!important;}
-  /* 2-col grids */
-  .stats-inner,.trainer-stats,.batch-topics,.form-grid,
-  .about-highlights,.hero-trust-grid{grid-template-columns:1fr 1fr!important;gap:0.75rem!important;}
-  /* Flex fixes */
-  .batch-inner,.about-inner,.cta-banner{flex-direction:column!important;gap:1.5rem!important;}
-  .batch-actions,.cta-btns,.trainer-links,.hero-actions{flex-direction:column!important;align-items:stretch!important;}
-  .batch-actions a,.cta-btns a,.trainer-links a,.btn-white,.btn-navy,.btn-wa,.btn-outline-white{text-align:center!important;justify-content:center!important;width:100%!important;}
-  /* Footer */
+  [style*="grid-template-columns"]{grid-template-columns:1fr!important;}
+  [style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr 1fr!important;}
+  [style*="gap:4rem"],[style*="gap:5rem"],[style*="gap:3rem"]{gap:1.5rem!important;}
+  [style*="padding:5rem"],[style*="padding:4rem"]{padding:2rem 4%!important;}
+  [style*="max-width:1100px"],[style*="max-width:900px"],[style*="max-width:520px"],[style*="max-width:580px"]{max-width:100%!important;}
+  [style*="min-width:180px"]{min-width:auto!important;width:100%!important;}
+  img[style*="height:520px"],img[style*="height:420px"]{height:220px!important;}
+  .batch-actions,.cta-btns,.trainer-links,.hero-actions{flex-direction:column!important;gap:0.6rem!important;}
+  .batch-actions a,.cta-btns a,.trainer-links a,.btn-navy,.btn-wa,.btn-white,.btn-outline-white{width:100%!important;text-align:center!important;justify-content:center!important;display:flex!important;}
   .footer-top{grid-template-columns:1fr!important;}
   .footer-bottom{flex-direction:column!important;text-align:center!important;}
-  .footer-links{justify-content:center!important;flex-wrap:wrap!important;}
-  .social-links{justify-content:center!important;}
-  /* Images */
-  .about-img{height:250px!important;}
-  .trainer-photo{width:120px!important;height:120px!important;}
-  /* Batch price */
-  .batch-price-card{min-width:auto!important;width:100%!important;}
-  /* Testi */
-  .testi-placed{flex-direction:column!important;gap:0.5rem!important;}
-  /* Contact */
-  .contact-wrap{grid-template-columns:1fr!important;}
+  .footer-links,.social-links{justify-content:center!important;flex-wrap:wrap!important;}
+  section{padding:2.5rem 4%!important;}
+  .page-hero{padding:2.5rem 4% 2rem!important;}
+  .sec-title{font-size:1.5rem!important;}
+  .services-grid,.offers-grid,.why-grid,.highlights-grid,.steps-grid,.domains-grid,.testi-grid,.pillars-grid,.provide-grid,.course-grid,.extra-wrap,.values-grid,.footer-top{grid-template-columns:1fr!important;}
+  .stats-inner,.batch-topics,.form-grid,.trainer-stats,.about-highlights{grid-template-columns:1fr 1fr!important;}
+  .testi-placed{flex-direction:column!important;}
+  .cta-banner{flex-direction:column!important;text-align:center!important;}
 }
 </style>
 </head>

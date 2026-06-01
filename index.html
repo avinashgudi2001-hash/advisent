@@ -147,8 +147,7 @@ footer{background:var(--navy);padding:3rem 5% 1.5rem;}
 .wa-btn:hover .wa-tip{opacity:1;}
 @keyframes waBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
 
-@media(max-width:900px){
-  .nav-links{display:none;}.hamburger{display:flex;}
+
 
   .hero-trust{grid-template-columns:repeat(2,1fr);}
   .pillars-grid,.about-inner,.about-highlights{grid-template-columns:1fr;}
@@ -157,8 +156,7 @@ footer{background:var(--navy);padding:3rem 5% 1.5rem;}
   .social-links{justify-content:center;}
 }
 
-@media(max-width:768px){
-  .nav-links{display:none!important;}.hamburger{display:flex!important;}
+
   nav{height:64px!important;padding:0 4%!important;}
   .page-hero{padding:3rem 4% 2rem!important;}
   h1,h2,.page-title,.sec-title,.batch-title{font-size:1.8rem!important;letter-spacing:-0.01em!important;}
@@ -198,6 +196,106 @@ footer{background:var(--navy);padding:3rem 5% 1.5rem;}
   /* Contact */
   .contact-wrap{grid-template-columns:1fr!important;}
 }
+
+/* MOBILE HERO FIX */
+
+
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:flex-end;}
+.hero-left{}
+.hero-right{}
+
+
+@media(max-width:800px){
+  /* NAV */
+  .nav-links{display:none!important;}
+  .hamburger{display:flex!important;}
+  nav{height:64px!important;}
+
+  /* HERO */
+  .hero{padding:4.5rem 4% 2.5rem!important;}
+  .hero-grid{display:block!important;}
+  .hero-right{display:none!important;}
+  h1{font-size:1.9rem!important;line-height:1.15!important;}
+  .hero-desc{font-size:0.92rem!important;}
+  .hero-tagline{font-size:0.85rem!important;padding:0.75rem 1rem!important;}
+  .hero-actions{flex-direction:column!important;gap:0.6rem!important;}
+  .btn-white,.btn-outline-white{width:100%!important;text-align:center!important;justify-content:center!important;display:flex!important;}
+  .hero-trust{flex-direction:column!important;gap:0.4rem!important;}
+  .hero-badge{font-size:0.7rem!important;}
+
+  /* SECTIONS */
+  section{padding:2.5rem 4%!important;}
+  .page-hero{padding:2.5rem 4% 2rem!important;}
+  .sec-wrap{padding:0!important;}
+  .sec-title{font-size:1.5rem!important;}
+
+  /* ALL GRIDS → 1 COLUMN */
+  .services-grid,.offers-grid,.why-grid,.highlights-grid,
+  .steps-grid,.domains-grid,.testi-grid,.pillars-grid,
+  .provide-grid,.about-company-inner,.contact-wrap,
+  .trainer-inner,.values-grid,.course-grid,.footer-top,
+  .extra-wrap,.about-highlights{
+    grid-template-columns:1fr!important;
+    gap:1rem!important;
+  }
+
+  /* 2 COLUMN GRIDS */
+  .stats-inner,.batch-topics,.form-grid,.trainer-stats{
+    grid-template-columns:1fr 1fr!important;
+    gap:0.75rem!important;
+  }
+
+  /* FLEX STACKS */
+  .batch-inner,.cta-banner{flex-direction:column!important;gap:1rem!important;}
+  .batch-actions,.cta-btns,.trainer-links{flex-direction:column!important;gap:0.6rem!important;}
+  .batch-actions a,.cta-btns a,.trainer-links a,
+  .btn-navy,.btn-wa,.btn-white{
+    width:100%!important;text-align:center!important;
+    justify-content:center!important;display:flex!important;
+  }
+
+  /* FOOTER */
+  .footer-top{grid-template-columns:1fr!important;}
+  .footer-bottom{flex-direction:column!important;text-align:center!important;gap:0.75rem!important;}
+  .footer-links,.social-links{justify-content:center!important;flex-wrap:wrap!important;}
+
+  /* IMAGES */
+  .about-img{height:220px!important;}
+  .trainer-photo{width:110px!important;height:110px!important;}
+  .about-badge{left:12px!important;bottom:-12px!important;}
+
+  /* MISC */
+  .testi-placed{flex-direction:column!important;gap:0.4rem!important;}
+  .batch-price-card{width:100%!important;}
+  /* TRAINER SECTION - stack on mobile */
+  .about-inner[style*="grid"]{grid-template-columns:1fr!important;gap:1.5rem!important;}
+  div[style*="grid-template-columns:auto 1fr"]{grid-template-columns:1fr!important;gap:1.5rem!important;text-align:center!important;}
+  div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
+  /* Fix all inline grid styles */
+  [style*="grid-template-columns"]{grid-template-columns:1fr!important;}
+  [style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr 1fr!important;}
+  [style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important;}
+  [style*="grid-template-columns:repeat(2"]{grid-template-columns:1fr!important;}
+  /* Text fixes */
+  [style*="font-size:2rem"]{font-size:1.4rem!important;}
+  [style*="font-size:1.8rem"]{font-size:1.3rem!important;}
+  [style*="gap:4rem"]{gap:1.5rem!important;}
+  [style*="gap:5rem"]{gap:1.5rem!important;}
+  [style*="gap:3rem"]{gap:1.5rem!important;}
+  /* Padding fixes */
+  [style*="padding:5rem"]{padding:2.5rem 4%!important;}
+  [style*="padding:4rem"]{padding:2rem 4%!important;}
+  /* Width fixes */
+  [style*="max-width:1100px"]{max-width:100%!important;}
+  [style*="max-width:900px"]{max-width:100%!important;}
+  [style*="max-width:520px"]{max-width:100%!important;}
+  [style*="max-width:580px"]{max-width:100%!important;}
+  [style*="min-width:180px"]{min-width:auto!important;width:100%!important;}
+  /* Image */
+  img[style*="height:520px"]{height:250px!important;}
+  img[style*="height:420px"]{height:220px!important;}
+}
+
 </style>
 </head>
 <body>
@@ -237,45 +335,78 @@ footer{background:var(--navy);padding:3rem 5% 1.5rem;}
 </div>
 
 <!-- HERO -->
-<section style="background:linear-gradient(135deg,#f0f4ff 0%,#e8eeff 50%,#f5f0ff 100%);padding:5rem 5% 0;position:relative;overflow:hidden;min-height:90vh;display:flex;align-items:center;">
-  <!-- Decorative circles -->
-  <div style="position:absolute;width:500px;height:500px;border-radius:50%;background:rgba(124,58,237,0.06);top:-150px;right:300px;pointer-events:none;"></div>
-  <div style="position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(37,99,235,0.05);bottom:-100px;left:-100px;pointer-events:none;"></div>
-
-  <div style="max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:flex-end;position:relative;z-index:1;">
-
-    <!-- LEFT TEXT -->
-    <div style="padding-bottom:4rem;">
-      <h1 style="font-size:clamp(2.2rem,4vw,3.4rem);font-weight:800;color:#0f172a;line-height:1.15;letter-spacing:-0.02em;margin-bottom:1.25rem;">
-        Welcome to <span style="color:var(--blue);">Advisent</span> —<br>Your Trusted Partner in<br>
-        <span style="color:var(--blue);">Training &amp; Placement</span>
-      </h1>
-      <p style="color:#475569;font-size:1rem;line-height:1.8;max-width:500px;margin-bottom:2rem;">
-        At Advisent Consultancy Services, we empower students and aspiring engineers with industry-focused <strong>technical training</strong>, real-world project experience, <strong>technical guidance</strong>, <strong>interview support</strong> and everything you need to help you land that interview — and ace it.
-      </p>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem;">
-        <a href="contact.html" style="background:var(--navy);color:#fff;padding:0.9rem 2rem;border-radius:8px;font-weight:700;font-size:0.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.2s;box-shadow:0 4px 16px rgba(15,45,94,0.2);" onmouseover="this.style.background='var(--blue)'" onmouseout="this.style.background='var(--navy)'">🎯 Book Free Demo</a>
-        <a href="services.html" style="background:#fff;color:var(--navy);padding:0.9rem 2rem;border-radius:8px;font-weight:600;font-size:0.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;border:1.5px solid var(--border);transition:all 0.2s;" onmouseover="this.style.borderColor='var(--blue)';this.style.color='var(--blue)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--navy)'">Explore Services →</a>
+<section class="hero">
+  <div style="max-width:1100px;margin:0 auto;position:relative;z-index:1;">
+    <div class="hero-grid">
+      <!-- LEFT -->
+      <div class="hero-left">
+        <div class="hero-badge">Training · Mentorship · Interview Support · Placement</div>
+        <h1>Your Growth.<br><em>Our Commitment.</em></h1>
+        <p class="hero-desc">At Advisent Consultancy Services, we empower students and aspiring engineers with industry-focused <strong>technical training</strong>, real-world project experience, <strong>technical guidance</strong>, <strong>interview support</strong> and everything you need to help you land that interview — and ace it.</p>
+        <div class="hero-tagline">💡 Your success is our commitment. Join ACS and take the first step toward the career you deserve.</div>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn-white">🎯 Book Free Demo</a>
+          <a href="services.html" class="btn-outline-white">Explore Services →</a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-item"><span style="color:var(--blue);font-weight:700;">✓</span> Technical Training</div>
+          <div class="trust-item"><span style="color:var(--blue);font-weight:700;">✓</span> Interview Support</div>
+        </div>
       </div>
-      <!-- Trust badges -->
-      <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
-        <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.82rem;color:#64748b;font-weight:500;"><span style="color:var(--blue);font-weight:700;">✓</span> Technical Training</div>
-        <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.82rem;color:#64748b;font-weight:500;"><span style="color:var(--blue);font-weight:700;">✓</span> Interview Support</div>
-        
+      <!-- RIGHT ILLUSTRATION -->
+      <div class="hero-right" style="display:flex;justify-content:center;align-items:center;padding-bottom:2rem;">
+        <div style="position:relative;width:100%;max-width:420px;">
+          <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:24px;padding:1.75rem;">
+            <!-- Browser bar -->
+            <div style="display:flex;align-items:center;gap:0.4rem;margin-bottom:1.25rem;">
+              <div style="width:9px;height:9px;border-radius:50%;background:#ef4444;"></div>
+              <div style="width:9px;height:9px;border-radius:50%;background:#f59e0b;"></div>
+              <div style="width:9px;height:9px;border-radius:50%;background:#22c55e;"></div>
+              <div style="flex:1;background:rgba(255,255,255,0.08);border-radius:4px;height:20px;margin-left:0.5rem;display:flex;align-items:center;padding:0 0.6rem;">
+                <span style="font-size:0.6rem;color:rgba(255,255,255,0.4);">advisent.co.in</span>
+              </div>
+            </div>
+            <!-- Course badge -->
+            <div style="background:rgba(255,255,255,0.06);border-radius:12px;padding:1rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.85rem;">
+              <div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#3b82f6,#1e6fd9);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;">⚙️</div>
+              <div style="flex:1;">
+                <div style="font-size:0.85rem;font-weight:700;color:#fff;">DevOps Batch — Open</div>
+                <div style="font-size:0.7rem;color:rgba(255,255,255,0.5);margin-top:0.1rem;">GCP · Kubernetes · Docker</div>
+              </div>
+              <div style="background:#22c55e;color:#fff;font-size:0.6rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:100px;flex-shrink:0;">LIVE</div>
+            </div>
+            <!-- Progress bars -->
+            <div style="margin-bottom:0.85rem;">
+              <div style="display:flex;justify-content:space-between;margin-bottom:0.3rem;">
+                <span style="font-size:0.7rem;color:rgba(255,255,255,0.6);">Resume Building</span>
+                <span style="font-size:0.7rem;color:#22c55e;font-weight:600;">100%</span>
+              </div>
+              <div style="background:rgba(255,255,255,0.1);border-radius:100px;height:5px;"><div style="background:linear-gradient(90deg,#22c55e,#16a34a);width:100%;height:5px;border-radius:100px;"></div></div>
+            </div>
+            <div style="margin-bottom:0.85rem;">
+              <div style="display:flex;justify-content:space-between;margin-bottom:0.3rem;">
+                <span style="font-size:0.7rem;color:rgba(255,255,255,0.6);">Interview Prep</span>
+                <span style="font-size:0.7rem;color:#3b82f6;font-weight:600;">85%</span>
+              </div>
+              <div style="background:rgba(255,255,255,0.1);border-radius:100px;height:5px;"><div style="background:linear-gradient(90deg,#3b82f6,#1e6fd9);width:85%;height:5px;border-radius:100px;"></div></div>
+            </div>
+            <div style="margin-bottom:1.25rem;">
+              <div style="display:flex;justify-content:space-between;margin-bottom:0.3rem;">
+                <span style="font-size:0.7rem;color:rgba(255,255,255,0.6);">Technical Training</span>
+                <span style="font-size:0.7rem;color:#f97316;font-weight:600;">70%</span>
+              </div>
+              <div style="background:rgba(255,255,255,0.1);border-radius:100px;height:5px;"><div style="background:linear-gradient(90deg,#f97316,#ea580c);width:70%;height:5px;border-radius:100px;"></div></div>
+            </div>
+
+          </div>
+          <!-- Floating badge -->
+          <div style="position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);background:#fff;border-radius:100px;padding:0.45rem 1rem;box-shadow:0 8px 20px rgba(0,0,0,0.12);white-space:nowrap;display:flex;align-items:center;gap:0.4rem;">
+            <div style="width:7px;height:7px;background:#22c55e;border-radius:50%;animation:pulse 2s infinite;"></div>
+            <span style="font-size:0.72rem;font-weight:700;color:#0f172a;">Enroll Now — Seats Limited</span>
+          </div>
+        </div>
       </div>
     </div>
-
-    <!-- RIGHT PHOTO -->
-    <div style="position:relative;display:flex;justify-content:flex-end;align-items:flex-end;height:100%;">
-      <!-- Decorative accent lines -->
-      <div style="position:absolute;top:20px;right:20px;width:60px;height:4px;background:var(--blue);border-radius:2px;"></div>
-      <div style="position:absolute;top:30px;right:20px;width:40px;height:4px;background:var(--accent);border-radius:2px;"></div>
-
-      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&q=80&fit=crop&crop=top"
-        alt="Team working with laptops"
-        style="width:100%;max-width:500px;height:520px;object-fit:cover;object-position:top;border-radius:20px 20px 0 0;display:block;box-shadow:0 20px 60px rgba(15,45,94,0.15);">
-    </div>
-
   </div>
 </section>
 
@@ -584,5 +715,23 @@ footer{background:var(--navy);padding:3rem 5% 1.5rem;}
   <div class="wa-tip">Chat with Avinash</div>
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
+
+<style>
+
+  #hero-photo{
+    display:none!important;
+    visibility:hidden!important;
+  }
+  .hero-actions a{
+    display:block!important;
+    width:100%!important;
+    text-align:center!important;
+    margin-bottom:0.5rem!important;
+  }
+  .hero h1{font-size:1.9rem!important;}
+  .hero-trust{display:block!important;}
+  .hero-trust>div{margin-bottom:0.5rem!important;}
+}
+</style>
 </body>
 </html>
